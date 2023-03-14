@@ -8,10 +8,11 @@ Pod::Spec.new do |s|
     s.author       = { "ihoudf" => "188816190@qq.com" }
     s.platform     = :ios
     s.ios.deployment_target = '7.1'
-    s.source       = { :git => "https://github.com/ihoudf/DFPlayer.git", :tag => s.version }
+    s.source       = { :git => "https://github.com/pengzishang/DFPlayer.git", :tag => s.version }
     s.source_files = 'DFPlayer/**/*.{h,m}'
     s.requires_arc = true
     s.frameworks = 'UIKit','AVFoundation','MediaPlayer'
+    s.dependency 'AFNetworking'
     # s.subspec 'supplement' do |ss|
     #     ss.source_files = 'DFPlayer/supplement/*.{h,m}'
     # end

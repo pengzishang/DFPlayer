@@ -46,19 +46,19 @@ static DFPlayerNetworkStatus _networkStatus;
 }
 
 + (void)startMonitoringNetworkStatus:(void (^)(DFPlayerNetworkStatus))block{
-    AFNetworkReachabilityManager *mgr = [AFNetworkReachabilityManager sharedManager];
-    [mgr setReachabilityStatusChangeBlock:^(AFNetworkReachabilityStatus status) {
+    DFPlayerAFNetworkReachabilityManager *mgr = [DFPlayerAFNetworkReachabilityManager sharedManager];
+    [mgr setReachabilityStatusChangeBlock:^(DFPlayerAFNetworkReachabilityStatus status) {
         switch (status) {
-            case AFNetworkReachabilityStatusUnknown:
+            case     DFPlayerAFNetworkReachabilityStatusUnknown:
                 _networkStatus = DFPlayerNetworkStatusUnknown;
                 break;
-            case AFNetworkReachabilityStatusNotReachable:
+            case     DFPlayerAFNetworkReachabilityStatusNotReachable:
                 _networkStatus = DFPlayerNetworkStatusNotReachable;
                 break;
-            case AFNetworkReachabilityStatusReachableViaWWAN:
+            case     DFPlayerAFNetworkReachabilityStatusReachableViaWWAN:
                 _networkStatus = DFPlayerNetworkStatusReachableViaWWAN;
                 break;
-            case AFNetworkReachabilityStatusReachableViaWiFi:
+            case     DFPlayerAFNetworkReachabilityStatusReachableViaWiFi:
                 _networkStatus = DFPlayerNetworkStatusReachableViaWiFi;
                 break;
         }
@@ -70,7 +70,7 @@ static DFPlayerNetworkStatus _networkStatus;
 }
 
 + (void)stopMonitoringNetwork{
-    [[AFNetworkReachabilityManager sharedManager] stopMonitoring];
+    [[DFPlayerAFNetworkReachabilityManager sharedManager] stopMonitoring];
 }
 
 + (DFPlayerNetworkStatus)networkStatus{
