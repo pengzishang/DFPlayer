@@ -8,7 +8,7 @@
 
 #import "DFCacheViewController.h"
 #import "NSObject+Extentions.h"
-#import "DFPlayer.h"
+#import <DFPlayer/DFPlayer.h>
 
 @interface DFCacheViewController ()
 {

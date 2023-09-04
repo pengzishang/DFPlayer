@@ -9,9 +9,8 @@
 #import "DFPlayerViewController.h"
 #import "YourModel.h"
 #import "NSObject+Extentions.h"
-
-#import "DFPlayer.h"
-#import "DFPlayerUIManager.h"
+#import <DFPlayer/DFPlayer.h>
+#import <DFPlayer/DFPlayerUIManager.h>
 
 #define topH SCREEN_HEIGHT - self.tabBarController.tabBar.frame.size.height - DFHeight(370)
 
